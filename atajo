@@ -1,4 +1,9 @@
 #!/bin/bash
+if [ $# -ne 1 ]
+then
+  echo "Pasar el mensaje de commit como parametro"
+  exit 1
+fi
 git add -A
 git commit -m $1
 git push web-repo master
