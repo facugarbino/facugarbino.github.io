@@ -24,7 +24,27 @@
     border: #c0efbf solid 1px;
     background-color: #c0efbf;
     justify-content: center;
-    padding-top:100px;
+    padding-top:50px;
+}
+.projects{
+    display:flex;
+    list-style: none;
+    justify-content: space-evenly;
+    margin-bottom: 50px;
+}
+.project{
+    background-color: lemonchiffon;
+    padding: 5px;
+    border-radius: 10px;
+}
+.project a{
+    font-family: serif;
+    color:#666;
+    font-size: 30px;
+    text-decoration: none;
+}
+.project a:hover{
+    text-decoration: underline;
 }
 .welcome-text{
     text-indent: 75px;
