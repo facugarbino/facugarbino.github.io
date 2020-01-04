@@ -6,4 +6,4 @@ then
 fi
 git add -A
 git commit -m $1
-git push -f web-repo master
+git push web-repo master
