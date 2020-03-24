@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="canvastest.js" defer></script>
+    <title>Corona Draw 1.0</title>
+
+</head>
+
+<body>
+    <div class="intro-panel">
+        <div class="intro-panel__content">
+            <h1>Corona Draw</h1>
+            <p>Corona Draw es un juego creado por la persistencia de dos primos que
+                estaban en cuarentena durante el momento de más temor de nuestro querido
+                siglo XXI</p>
+            <form class="intro-panel__login">
+                <input id="input-name" type="text" value="" placeholder="Enter your name">
+                <select id="roomSelect">
+                    <option value="1">Spanish room</option>
+                    <option value="2" selected>English room</option>
+                    <option value="3">Nico pt</option>
+                </select>
+                <input id="play-btn" type="submit" value="play">
+            </form>
+            </div>
+        </div>
+    </div>
+    <div id="container" class="container hide">
+       
+        <div class="l-panel">
+            <div class="l-panel-content">
+                <h3 class="l-panel-room__name"></h3>
+                <!-- <h3 class="game-board__hint">Hint</h3> -->
+                <h3 class="l-panel-round__title"></h3>
+                <h3 class="l-panel-score__title">Scores:</h3>
+                <div class="l-panel-score__container">
+                    <table class="l-panel-score__table">
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <h3 class="l-panel-playersinroom"></h3>
+                <div class="l-panel__control-panel">
+                    <button id ="goback-btn" class="exit-button button">Back</button>
+                    <button class="settings-button button">settings</button>
+                </div>
+            </div>
+        </div>
+        <div class="game">
+            <canvas id="can" width="550" height="550"></canvas>
+            <div class="game-board">
+                <div class="game-board__timer"><span>60</span></div>
+                <!-- <div class="game-board__word">You have to draw: <span>construir</span></div> -->
+                <div class="game-board__word"><span></span></div>
+                <div class="game-board__word hide">Word Hint: <span>_ _ _ _ _ _ _ _</span></div>
+
+                <div class="icons">
+                    <div class="colors">
+                        <div id="black" class="black icon"></div>
+                        <div id="green" class="green icon"></div>
+                        <div id="blue" class="blue icon"></div>
+                        <div id="red" class="red icon"></div>
+                        <div id="yellow" class="yellow icon"></div>
+                        <div id="orange" class="orange icon"></div>
+                        <div id="eraser" class="eraser icon"></div>
+                        <div id="white" class="white icon"></div>
+                        <div id="salmon" class="salmon icon"></div>
+                        <div id="gold" class="gold icon"></div>
+                        <div id="khaki" class="khaki icon"></div>
+                        <div id="lemonchiffon" class="lemonchiffon icon"></div>
+                        <div id="lawngreen" class="lawngreen icon"></div>
+                        <div id="lightgreen" class="lightgreen icon"></div>
+                        <div id="aquamarine" class="aquamarine icon"></div>
+                        <div id="royalblue" class="royalblue icon"></div>
+                    </div>
+                    <div class="game-tools">
+
+                        <div class="tool icon tools-brush__size-small" id="small-brush">
+                            <img class="brush-size-icon" src="img/brush.svg" alt="Small Brush" />
+                        </div>
+                        <div class="tool icon tools-brush__size-medium" id="medium-brush">
+                            <img class="brush-size-icon" src="img/brush.svg" alt="Medium Brush" />
+                        </div>
+                        <div class="tool icon tools-brush__size-big" id="big-brush">
+                            <img class="brush-size-icon" src="img/brush.svg" alt="Big Brush" />
+                        </div>
+
+                        <div class="clean tool icon" id="clean-tool">
+                            <img class="clean-icon" src="img/clean-icon.svg" alt="Clean Board" />
+                        </div>
+                        <div class="bucket tool icon" id="bucket-tool">
+                            <img class="bucket-icon" src="img/paint-bucket.svg" alt="Fill Bucket" />
+                        </div>
+                    </div>
+                </div>
+                <div class="game-board__guessing hide">
+                    <div class="game-board__guessing-icons">
+                        <div class="game-board__like icon" id="like-icon">
+                            <img class="like-icon" src="img/like-cambiar.svg" alt="Fill Bucket" />
+                        </div>
+                        <div class="game-board-report icon" id="report-icon">
+                            <img class="report-icon" src="img/report-cambiar.svg" alt="Fill Bucket" />
+                        </div>
+                    </div>
+                    <p class="game-board__currenty-drawing">Facu is currently drawing</p>
+                </div>
+            </div>
+        </div>
+        <div class="chat">
+            <div class="chat-output">
+                <div class="chat-text__line">
+                    <span class="chat-user">
+                        santi:
+                    </span> Hola como va?.
+                </div>
+                <div class="chat-text__line">
+                    <span class="chat-user">
+                        facu_el_pt:
+                    </span>
+                    Bien aca por jugar este excelente
+                    juego.
+                </div>
+                <div class="chat-text__line chat-correctword">
+                    <span class="chat-user">
+                        santi:
+                    </span>mesa
+                </div>
+                <div class="chat-text__line">
+                    <span class="chat-user">
+                        santi:
+                    </span>
+                    casa
+                </div>
+                <div class="chat-text__line">
+                    <span class="chat-user">
+                        nico_el_otro_pt:
+                    </span>
+                    hint!!!!!!!!.
+                </div>
+
+                <div class="chat-text__line">
+                    <span class="chat-user">
+                        santi: </span>
+                    daadsdd.
+                </div>
+                <div class="chat-text__line">
+                    <span class="chat-user">
+                        guada_REPT:
+                    </span>
+                    alto juegooo.
+                </div>
+
+                <div class="chat-text__line chat-user__join-left">
+                    elTioRocky has joined the room.
+                </div>
+                <div class="chat-text__line">
+                    <span class="chat-user">
+                        extraño:
+                    </span>
+                    Lorem ipsum dolor sit amet.
+                </div>
+            </div>
+            <form id="chat-input" class="chat-input">
+                <input class="input-text" type="text" placeholder="type message">
+                <input class="send-button" type="submit" value="Send">
+            </form>
+        </div>
+    </div>
+
+    <input type="button" value="Dibujar" id="toggle" size="23">
+</body>
+
+</html>
